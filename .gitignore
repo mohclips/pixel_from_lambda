@@ -6,7 +6,9 @@
 .idea/jsLibraryMappings.xml
 .idea/inspectionProfiles
 
-.serveless/
+.serverless/
 vendored/
 settings.ini
 *.zip
+*.gif
+*.png
