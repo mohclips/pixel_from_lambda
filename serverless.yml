@@ -1,12 +1,31 @@
-frameworkVersion: "=1.15.2"
+frameworkVersion: ">=1.15.2"
 
+
+tenant: mohclips
+app: tracking-pixel
 service: tracking-pixel
+
+#http://www.goingserverless.com/blog/api-gateway-url
+custom:
+  region: eu-west-1
+  stage: "${opt:stage, self:provider.stage}"
+  prod:
+    GW_URL: { "Fn::Join" : ["", [ "https://", { "Ref" : "ApiGatewayRestApi" }, ".execute-api.${self:custom.region}.amazonaws.com/${self:custom.stage}" ] ]  }
+  dev:
+    GW_URL: "http://localhost:3000/"
 
 provider:
   name: aws
-  runtime: python2.7
-  stage: dev
-  region: us-west-2
+  runtime: python3.7
+  stage: prod
+  region: ${self:custom.region}
+  #cfnRole: arn:aws:cloudformation:eu-west-1:542902479637:stack/tracking-pixel-dev/68ae0e40-a3bb-11e9-b90a-0a8d8e29a944
+  
+  environment:
+    GW_URL: ${self:custom.${self:custom.stage}.GW_URL}
+
+
+
 
 functions:
   pixel:
