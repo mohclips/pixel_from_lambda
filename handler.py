@@ -14,11 +14,11 @@ def get_pixel(event, context):
     Ingest data and return a 1x1 gif pixel
     """
     # print the full event in CloudWatch for debugging purposes
-    print json.dumps(event)
+    print('event: '+json.dumps(event))
     # get all params in the string
     params = event['queryStringParameters']
     # print them for debug
-    print params
+    print('params: '+str(params))
     # build a container object wrapping up useful information
     event_wrapper = {
         'eventId': str(uuid.uuid4()),  # assign a unique event id to the event
@@ -27,7 +27,7 @@ def get_pixel(event, context):
     # do something with the payload, e.g. send data to a message broker
     response = drop_message_to_broker(event_wrapper)
     # print broker response in CloudWatch for debugging purposes
-    print response
+    print('response: '+str(response))
     # finally return the 1x1 gif to the client
     return return_pixel_through_gateway()
 
