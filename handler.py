@@ -65,7 +65,9 @@ def return_pixel_through_gateway():
     return {
         "statusCode": 200,
         "headers": {
-            'Content-Type': 'image/gif'
+            'Content-Type': 'image/gif',
+            # https://www.imperva.com/learn/performance/cache-control/
+            'Cache-Control': 'private, max-age=600'
         },
         "body": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
         "isBase64Encoded": True
