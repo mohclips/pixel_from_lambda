@@ -12,3 +12,12 @@ settings.ini
 *.zip
 *.gif
 *.png
+
+.vscode/
+bin/
+include/
+lib/
+node_modules/
+__pycache__/
+pip-selfcheck.json
+package-lock.json

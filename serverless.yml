@@ -14,11 +14,15 @@ custom:
   dev:
     GW_URL: "http://localhost:3000/"
 
+plugins:
+  - serverless-python-requirements
+
 provider:
   name: aws
   runtime: python3.7
   stage: prod
   region: ${self:custom.region}
+  # leaving this out produces a warning cfnRole
   #cfnRole: arn:aws:cloudformation:eu-west-1:542902479637:stack/tracking-pixel-dev/68ae0e40-a3bb-11e9-b90a-0a8d8e29a944
   
   environment:

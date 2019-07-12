@@ -1,0 +1,26 @@
+{
+  "name": "pixel_from_lambda",
+  "version": "1.0.0",
+  "description": "How to easily serve a 1x1 GIF pixel from an Python, lambda-powered endpoint.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohclips/pixel_from_lambda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohclips/pixel_from_lambda/issues"
+  },
+  "homepage": "https://github.com/mohclips/pixel_from_lambda#readme",
+  "dependencies": {
+    "serverless-python-requirements": "^4.3.0"
+  },
+  "devDependencies": {}
+}
