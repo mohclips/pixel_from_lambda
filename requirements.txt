@@ -1,1 +1,6 @@
-httpagentparser==1.8.2
+# my fork
+# https://stackoverflow.com/questions/16584552/how-to-state-in-requirements-txt-a-direct-github-source
+git+ssh://git@github.com/mohclips/httpagentparser.git#egg=httpagentparser
+
+# reinstall  
+# pip install --upgrade --no-deps --force-reinstall -r requirements.txt
