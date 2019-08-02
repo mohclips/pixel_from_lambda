@@ -36,7 +36,10 @@ def get_pixel(event, context):
     else:
         c = cookies.SimpleCookie()
         c.load(cookie)
-        event_id = c['sid'].value
+        if 'sid' in c:
+            event_id = c['sid'].value
+        else:
+            event_id = str(uuid.uuid4())
 
     event_wrapper = {
         'eventId': event_id,  # assign a unique event id to the event or the previous cookie value

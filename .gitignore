@@ -22,3 +22,5 @@ __pycache__/
 pip-selfcheck.json
 package-lock.json
 pip-delete-this-directory.txt
+
+*.pyc
