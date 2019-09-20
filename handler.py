@@ -89,10 +89,11 @@ def return_pixel_through_gateway(event_id):
         "statusCode": 200,
         "headers": {
             'Set-Cookie': cookie.output().split(': ')[1], # daft way to pick the cookie out
-            'Content-Type': 'image/gif',
+            'Content-Type': 'image/png',
             # https://www.imperva.com/learn/performance/cache-control/
             'Cache-Control': 'private, max-age=600'
         },
-        "body": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        #"body": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        "body": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
         "isBase64Encoded": True
     }

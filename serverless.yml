@@ -14,8 +14,16 @@ custom:
   dev:
     GW_URL: "http://localhost:3000/"
 
+  apigwBinary:
+    types:
+      - 'image/png'
+      - 'image/jpg'
+      - 'image/gif'
+
 plugins:
   - serverless-python-requirements
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
 
 provider:
   name: aws
@@ -28,6 +36,11 @@ provider:
   environment:
     GW_URL: ${self:custom.${self:custom.stage}.GW_URL}
 
+  # https://theleakycauldronblog.com/blog/use-serverless-lambda-api-gateway-for-binary-response/
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
+
 
 
 
@@ -39,3 +52,4 @@ functions:
           path: /pixel
           method: get
           cors: true
+          contentHandling: CONVERT_TO_BINARY
